@@ -1,1 +1,3 @@
-hacer de nuevo el archivo psint
+Se le puede asignar a una funcion el valor de una variable para operar, justo como a randint es psoible darle valores (x,y) a travez de variables (variable1, variable2).
+
+Randint es una funcion.
