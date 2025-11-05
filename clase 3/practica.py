@@ -11,9 +11,10 @@ def procesar():
     n_menor=""
     cont_apr=0
     cont_rep=0
-    cantidad=0
+    cantidad=1
     acum_notas=0
     while True:
+        cantidad=cantidad+1
         nombre,nota=capturar_datos()
         if nota>nota_mayor:
             nota_mayor=nota
@@ -28,11 +29,11 @@ def procesar():
             cont_rep=cont_rep+1
             print("Reprobado")
         acum_notas=acum_notas+nota
-        promedio=acum_notas/promedio
+        promedio=acum_notas/cantidad
         resp=input("X para detener").upper()
         if resp=="X":
             break
-    return nota_mayor, n_mayor, nota_menor, n_menor, cont_apr, cont_rep,promedio
+    return nota_mayor, n_mayor, nota_menor, n_menor, cont_apr, cont_rep, promedio
 
 def imprimir(nota_mayor,n_mayor,nota_menor,n_menor, cont_apr, cont_rep,promedio):
     print(f"Promedio de notas {promedio}")
@@ -41,5 +42,5 @@ def imprimir(nota_mayor,n_mayor,nota_menor,n_menor, cont_apr, cont_rep,promedio)
     print(f"Aprobaron {cont_apr}")
     print(f"Reprobaron {cont_rep}")
 #Principal   
-notamayor, n_mayor,notamenor,n_menor= procesar()
-imprimir(notamayor, n_mayor,notamenor,n_menor)
+nota_mayor, n_mayor, nota_menor, n_menor, cont_apr, cont_rep, promedio= procesar()
+imprimir(nota_mayor, n_mayor,nota_menor,n_menor,cont_apr, cont_rep, promedio)
